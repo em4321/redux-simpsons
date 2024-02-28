@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getSimpsons } from "./redux/characterSlice";
 import { getData } from "./dataController/fetching";
 import Characters from "./components/Characters";
+import Controls from "./components/Controls";
+import "./css/App.css";
 
 const App = () => {
   const simpsons = useSelector(getSimpsons);
-  const dispatch = useDispatch(console.log(simpsons));
 
   useEffect(() => {
     getData();
@@ -15,6 +16,7 @@ const App = () => {
   if (!simpsons) return <p>Loading</p>;
   return (
     <>
+      <Controls />
       <Characters />
     </>
   );
