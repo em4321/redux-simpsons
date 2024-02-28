@@ -13,20 +13,13 @@ const App = () => {
     getData();
   }, []);
 
-  let totalLiked = 0;
-  simpsons.forEach((character) => {
-    if (character.liked) {
-      totalLiked++;
-    }
-  });
-
   if (!simpsons) return <p>Loading</p>;
   return (
     <>
       <Controls />
-      <p>
+      {/* <p>
         {totalLiked} liked out of {simpsons.length} Characters
-      </p>
+      </p> */}
       <Characters />
     </>
   );
