@@ -5,6 +5,7 @@ import { getData } from "./dataController/fetching";
 import Characters from "./components/Characters";
 import Controls from "./components/Controls";
 import "./css/App.css";
+import Header from "./components/Header";
 
 const App = () => {
   const simpsons = useSelector(getSimpsons);
@@ -16,10 +17,9 @@ const App = () => {
   if (!simpsons) return <p>Loading</p>;
   return (
     <>
+      <Header />
       <Controls />
-      {/* <p>
-        {totalLiked} liked out of {simpsons.length} Characters
-      </p> */}
+
       <Characters />
     </>
   );

@@ -20,10 +20,18 @@ export const characterSlice = createSlice({
       });
       state.simpsons[index].liked = !state.simpsons[index].liked;
     },
+    // totalLiked: (state) => {
+    //   let total = 0;
+    //   state.simpsons.forEach((character) => {
+    //     if (character.liked) {
+    //       total++;
+    //     }
+    //   });
+    // },
   },
 });
 
-export const { addData, deleteCharacter, toggleLikeCharacter } =
+export const { addData, deleteCharacter, toggleLikeCharacter, totalLiked } =
   characterSlice.actions;
 
 export const getSimpsons = (state) => state.character.simpsons;
