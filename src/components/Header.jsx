@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { totalLiked, getSimpsons } from "../redux/characterSlice";
+import { useSelector } from "react-redux";
+import { getSimpsons } from "../redux/characterSlice";
 
 const Header = () => {
   const simpsons = useSelector(getSimpsons);

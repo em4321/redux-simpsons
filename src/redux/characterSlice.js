@@ -20,6 +20,10 @@ export const characterSlice = createSlice({
       });
       state.simpsons[index].liked = !state.simpsons[index].liked;
     },
+    textInput: (state, action) => {
+      state.search = action.payload;
+    },
+
     // totalLiked: (state) => {
     //   let total = 0;
     //   state.simpsons.forEach((character) => {
@@ -31,9 +35,16 @@ export const characterSlice = createSlice({
   },
 });
 
-export const { addData, deleteCharacter, toggleLikeCharacter, totalLiked } =
-  characterSlice.actions;
+export const {
+  addData,
+  deleteCharacter,
+  toggleLikeCharacter,
+  totalLiked,
+  textInput,
+  sortSelect,
+} = characterSlice.actions;
 
 export const getSimpsons = (state) => state.character.simpsons;
+export const getSearch = (state) => state.character.search;
 
 export default characterSlice.reducer;

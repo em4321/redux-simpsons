@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getSimpsons } from "../redux/characterSlice";
+import { getSimpsons, textInput, sortSelect } from "../redux/characterSlice";
 
-const Controls = ({ textInput, sortSelect }) => {
+const Controls = () => {
   const simpsons = useSelector(getSimpsons);
   const dispatch = useDispatch();
+
   return (
     <>
       <div className="search">
@@ -12,7 +13,9 @@ const Controls = ({ textInput, sortSelect }) => {
           id="search"
           name="search"
           placeholder="Search Simpsons character..."
-          onInput={textInput}
+          onInput={(e) => {
+            dispatch(textInput(e.target.value));
+          }}
           style={{
             borderRadius: "25px",
             textAlign: "center",
