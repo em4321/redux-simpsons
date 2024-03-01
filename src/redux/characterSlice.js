@@ -33,7 +33,6 @@ export const {
   addData,
   deleteCharacter,
   toggleLikeCharacter,
-  totalLiked,
   textInput,
   sortSelect,
 } = characterSlice.actions;
