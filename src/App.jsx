@@ -11,7 +11,7 @@ const App = () => {
   const simpsons = useSelector(getSimpsons);
   const search = useSelector(getSearch);
   const sort = useSelector(getSort);
-
+  console.log(sort);
   useEffect(() => {
     getData();
   }, []);
@@ -25,8 +25,9 @@ const App = () => {
         return character.character.toLowerCase().includes(search.toLowerCase());
       });
     }
-
+    console.log(filtered);
     filtered.sort((a, b) => {
+      console.log(a.character, b.character);
       if (a.character > b.character) {
         return 1;
       }

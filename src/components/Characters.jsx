@@ -5,8 +5,8 @@ import {
   toggleLikeCharacter,
 } from "../redux/characterSlice";
 
-const Characters = () => {
-  const simpsons = useSelector(getSimpsons);
+const Characters = ({ simpsons }) => {
+  // const simpsons = useSelector(getSimpsons);
   const dispatch = useDispatch();
   return simpsons.map((character, index) => {
     return (
