@@ -1,8 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import { getSimpsons, textInput, sortSelect } from "../redux/characterSlice";
+import { useDispatch } from "react-redux";
+import { textInput, sortSelect } from "../redux/characterSlice";
 
 const Controls = () => {
-  const simpsons = useSelector(getSimpsons);
   const dispatch = useDispatch();
 
   return (
@@ -27,7 +26,9 @@ const Controls = () => {
       </div>
       <div className="sortSelect">
         <select
-          onChange={sortSelect}
+          onChange={(e) => {
+            dispatch(sortSelect(e.target.value));
+          }}
           style={{
             backgroundColor: "#efcba4",
             borderRadius: "25px",

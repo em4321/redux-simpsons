@@ -23,6 +23,9 @@ export const characterSlice = createSlice({
     textInput: (state, action) => {
       state.search = action.payload;
     },
+    sortSelect: (state, action) => {
+      state.sort = action.payload;
+    },
 
     // totalLiked: (state) => {
     //   let total = 0;
@@ -46,5 +49,6 @@ export const {
 
 export const getSimpsons = (state) => state.character.simpsons;
 export const getSearch = (state) => state.character.search;
+export const getSort = (state) => state.character.sort;
 
 export default characterSlice.reducer;

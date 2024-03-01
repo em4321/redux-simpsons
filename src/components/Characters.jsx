@@ -8,10 +8,10 @@ import {
 const Characters = () => {
   const simpsons = useSelector(getSimpsons);
   const dispatch = useDispatch();
-  return simpsons.map((character) => {
+  return simpsons.map((character, index) => {
     return (
       <>
-        <div className="character" key={character}>
+        <div className="character" key={index}>
           <div className="nameAndButtons">
             <h1
               className="characterName"
