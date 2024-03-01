@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getSearch, getSimpsons, getSort } from "./redux/characterSlice";
 import { getData } from "./dataController/fetching";
-import Characters from "./components/Characters";
+import Character from "./components/Character";
 import Controls from "./components/Controls";
 import "./css/App.css";
 import Header from "./components/Header";
@@ -11,12 +11,18 @@ const App = () => {
   const simpsons = useSelector(getSimpsons);
   const search = useSelector(getSearch);
   const sort = useSelector(getSort);
-  console.log(sort);
+
   useEffect(() => {
     getData();
   }, []);
 
-  if (!simpsons) return <p>Loading</p>;
+  if (!simpsons) {
+    return (
+      <div className="loading">
+        <h1>Loading Quotes...</h1>
+      </div>
+    );
+  }
 
   let filtered = [...simpsons];
   {
@@ -27,7 +33,6 @@ const App = () => {
     }
     console.log(filtered);
     filtered.sort((a, b) => {
-      console.log(a.character, b.character);
       if (a.character > b.character) {
         return 1;
       }
@@ -47,7 +52,7 @@ const App = () => {
         <Controls />
         {filtered.map((character, index) => {
           return (
-            <Characters
+            <Character
               simpsons={filtered}
               key={index}
               {...character}

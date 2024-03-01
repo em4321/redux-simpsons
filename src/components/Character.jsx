@@ -1,12 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  deleteCharacter,
-  getSimpsons,
-  toggleLikeCharacter,
-} from "../redux/characterSlice";
+import { useDispatch } from "react-redux";
+import { deleteCharacter, toggleLikeCharacter } from "../redux/characterSlice";
 
-const Characters = ({ simpsons }) => {
-  // const simpsons = useSelector(getSimpsons);
+const Character = ({ simpsons }) => {
   const dispatch = useDispatch();
   return simpsons.map((character, index) => {
     return (
@@ -57,4 +52,4 @@ const Characters = ({ simpsons }) => {
   });
 };
 
-export default Characters;
+export default Character;

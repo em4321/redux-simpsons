@@ -26,15 +26,6 @@ export const characterSlice = createSlice({
     sortSelect: (state, action) => {
       state.sort = action.payload;
     },
-
-    // totalLiked: (state) => {
-    //   let total = 0;
-    //   state.simpsons.forEach((character) => {
-    //     if (character.liked) {
-    //       total++;
-    //     }
-    //   });
-    // },
   },
 });
 
